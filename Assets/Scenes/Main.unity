@@ -313,8 +313,9 @@ GameObject:
   m_Component:
   - component: {fileID: 293318059}
   - component: {fileID: 293318060}
-  - component: {fileID: 293318058}
+  - component: {fileID: 293318062}
   - component: {fileID: 293318061}
+  - component: {fileID: 293318063}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -322,21 +323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &293318058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293318057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54c6cd4f612c7b248b32137ca1f35b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dataGame: {fileID: 293318060}
-  _gridSpawner: {fileID: 987233101}
-  _visualGame: {fileID: 293318061}
 --- !u!4 &293318059
 Transform:
   m_ObjectHideFlags: 0
@@ -380,12 +366,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 293318057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25869e9fe127ff246a8165f88d3685a2, type: 3}
+  m_Script: {fileID: 11500000, guid: f017533c69db73441ae38f39b800240d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _searchText: {fileID: 71230983}
-  _restartButton: {fileID: 1647653496}
-  _loadingPanel: {fileID: 293307414}
+  _loadGame: {fileID: 293318062}
+  uiGame: {fileID: 670055234}
+--- !u!114 &293318062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293318057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc0e5fb1d06a2c4cb9950850db07968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataGame: {fileID: 293318060}
+  _gridSpawner: {fileID: 987233101}
+  visualGame: {fileID: 293318063}
+--- !u!114 &293318063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293318057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5904737bbe9cc5348a5620cc46fc50dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameState: {fileID: 293318061}
+  uiGame: {fileID: 670055234}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +504,7 @@ GameObject:
   - component: {fileID: 670055232}
   - component: {fileID: 670055231}
   - component: {fileID: 670055230}
+  - component: {fileID: 670055234}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -582,6 +597,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &670055234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670055229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25869e9fe127ff246a8165f88d3685a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _searchText: {fileID: 71230983}
+  _restartButton: {fileID: 1647653496}
+  _loadingPanel: {fileID: 293307414}
 --- !u!1 &845297162
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,8 +807,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 293318058}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 293318061}
+        m_TargetAssemblyTypeName: GameState, Assembly-CSharp
         m_MethodName: OnRestartClick
         m_Mode: 1
         m_Arguments:

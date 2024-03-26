@@ -1,10 +1,14 @@
+using Game.Scripts.Data;
 using UnityEngine;
 
-public class DataGame : MonoBehaviour
+namespace Game.Scripts
 {
-    [SerializeField] private LevelData[] _levelsData;
-    [SerializeField] private CardBundleData[] _cardBundlesData;
+    public class DataGame : MonoBehaviour
+    {
+        [SerializeField] private LevelData[] _levelsData;
+        [SerializeField] private CardBundleData[] _cardBundlesData;
 
-    public LevelData[] LevelsData => _levelsData;
-    public CardBundleData[] CardBundlesData => _cardBundlesData;
+        public LevelData[] LevelsData => _levelsData;
+        public CardBundleData[] CardBundlesData => _cardBundlesData;
+    }
 }
